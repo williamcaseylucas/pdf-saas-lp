@@ -10,10 +10,36 @@
 - yarn add @kinde-oss/kinde-auth-nextjs
 - yarn add @clerk/nextjs
 
+## bun
+
+- much faster than pnpm
+- bun create next-app
+- bun install
+- bun add \_
+- bun run build
+
+- layout alternative to React.ReactNode -> PropsWithChildren
+  - { children }: { children: React.ReactNode }
+  - { children }: PropsWithChildren
+
+## trpc
+
+- https://trpc.io/docs/client/nextjs/setup
+- add index.ts and trpc.ts in /src directory
+- add Providers.tsx in components that wraps TRPC instance around your entire app
+  - Good to wrap QueryClientProvider as child so that we can use that seperately later
+- have trpc instance within app in (trpc)
+- add route handlers for /api route
+  - https://trpc.io/docs/server/adapters/nextjs#route-handlers
+  - create /app/api/trpc/[trpc]/routes.ts
+- /src/trpc/index.ts is where you create procedures to call
+
 ## urls
 
 - /auth-callback?origin=dashboard
   - for reauthentication with origin being back to the dashboard (where the user currently is)
+- use router to push urls
+- use useSearchParams() to get queries from the url
 
 ## Clerk (supposed to be Kinde) (auth)
 
