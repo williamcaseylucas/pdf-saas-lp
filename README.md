@@ -22,6 +22,7 @@
 - bun add react-dropzone
   - for the Dialoge content section in /components/UploadButton
 - bun add uploadthing @uploadthing/react
+- pnpm i @uploadthing/react
 
 ### Shadcn
 
@@ -29,6 +30,7 @@
 - bunx shadcn-ui@latest add button
 - bunx shadcn-ui@latest add dialog
 - bunx shadcn-ui@latest add progress
+- bunx shadcn-ui@latest add toast
 
 ### Prisma
 
@@ -36,6 +38,28 @@
 - bunx prisma generate
 - bunx prisma db push
 - bunx prisma studio
+
+## Notes
+
+- run bunx prisma generate if you delete node modules
+
+##
+
+## toast shadcn
+
+- have to add to layout.tsx
+- useToast hook to access
+
+## upload thing
+
+- only logged in users can upload
+- need to add formHook that incorporates OurFileRouter they provide in /src/lib/uploadthing.ts
+  - in docs it's under generateReactHelpers
+  - useUploadThing is now a hook we can use that has OurFileRouter type binded
+- core.ts -> onUploadComplete is for it to be added to our db
+  - metadata comes from middleware
+- onUploadProgress exists which could have been used for more accurate file upload info
+- once mutation occurs, we reroute to new page with file
 
 ## File storage
 
@@ -45,6 +69,11 @@
 
 - have to use <input {...getInputProps()}> to have click for file explorer functionality
 - use <Dropzone> component
+- have to import css for Document in same page (PdfRenderer component is example)
+- to parse pdf properly
+  - add next.config.js part
+    - add webpack with config
+  - add worker
 
 ## determinate progress bar
 
@@ -163,6 +192,7 @@
   - buttonVariants({ size: "lg", className: "mt-5" })
 - asChild allows you to create custom button instead of preconfigured button
   - would be button in button otherwise
+- add to Progress.tsx a "indicatorColor"
 
 ## images
 
