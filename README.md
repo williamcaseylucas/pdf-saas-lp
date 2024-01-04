@@ -2,21 +2,33 @@
 
 ## packages
 
+### Styling Tailwind
+
 - bun add clsx tailwind-merge
 - bun add tailwindcss-animate @tailwindcss/typography
 - bun add lucid-react
-- bun add @kinde-oss/kinde-auth-nextjs
-- bun add @clerk/nextjs
 - bun add react-loading-skelton
   - have to import this in layout.tsx
+
+### Login
+
+- bun add @kinde-oss/kinde-auth-nextjs
+- bun add @clerk/nextjs
 - bun add date-fns
+
+### PDF drag and drop
+
 - bun add react-pdf
+- bun add react-dropzone
+  - for the Dialoge content section in /components/UploadButton
+- bun add uploadthing @uploadthing/react
 
 ### Shadcn
 
 - bunx shadcn-ui@latest init
 - bunx shadcn-ui@latest add button
 - bunx shadcn-ui@latest add dialog
+- bunx shadcn-ui@latest add progress
 
 ### Prisma
 
@@ -25,7 +37,23 @@
 - bunx prisma db push
 - bunx prisma studio
 
+## File storage
+
+- AWS S3 buckets (cheaper than uploadthing), Cloudinary, and uploadthing (good for 500 - 1000 users because free)
+
 ## react PDF
+
+- have to use <input {...getInputProps()}> to have click for file explorer functionality
+- use <Dropzone> component
+
+## determinate progress bar
+
+- have it simulate progress bar until 95% and then shoot to 100% when it completes
+- /src/components/UploadButton has example of startSimulatedProgress
+  - have clearInterval to have it stop using setInterval
+  - then clear it again in DropZone component
+- simulate slow upload with:
+  - await new Promise((resolve) => setTimeout(resolve, 1500));
 
 ## Date-fns
 
