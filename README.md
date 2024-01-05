@@ -23,6 +23,8 @@
   - for the Dialoge content section in /components/UploadButton
 - bun add uploadthing @uploadthing/react
 - pnpm i @uploadthing/react
+- pnpm i react-resize-detector
+  - to make pdf fit to screen
 
 ### Shadcn
 
@@ -74,6 +76,8 @@
   - add next.config.js part
     - add webpack with config
   - add worker
+    - via pdfjs (in /components/PdfRenderer)
+- make pdf expand by putting div around document and using react-resize-detector
 
 ## determinate progress bar
 
