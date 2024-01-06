@@ -33,6 +33,7 @@
 - bunx shadcn-ui@latest add dialog
 - bunx shadcn-ui@latest add progress
 - bunx shadcn-ui@latest add toast
+- bunx shadcn-ui@latest add input
 
 ### Prisma
 
@@ -78,6 +79,10 @@
   - add worker
     - via pdfjs (in /components/PdfRenderer)
 - make pdf expand by putting div around document and using react-resize-detector
+
+## typescript
+
+- if you add a '!' after a variable that's throwing an error, it will make it go away
 
 ## determinate progress bar
 
